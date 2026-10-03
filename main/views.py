@@ -4,8 +4,8 @@ from .models import Student
 
 def home(request):
     students = Student.objects.all()
-
-    return render(request, 'main/home.html', {
+    context = {
         'students': students
-    })
+    }
+    return render(request, 'main/home.html', context)
 
